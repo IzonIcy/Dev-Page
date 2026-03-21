@@ -99,8 +99,8 @@ await app.register(fastifyStatic, {
 });
 
 app.get("/", async (_req, reply) => reply.sendFile("index.html"));
-app.get("/archive", async (_req, reply) => reply.redirect(302, "/archive.html"));
-app.get("/lab", async (_req, reply) => reply.redirect(302, "/lab_list.html"));
+app.get("/archive", async (_req, reply) => reply.redirect("/archive.html", 302));
+app.get("/lab", async (_req, reply) => reply.redirect("/lab_list.html", 302));
 
 app.get("/healthz", async () => ({ ok: true }));
 
